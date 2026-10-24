@@ -195,7 +195,7 @@ export default function App() {
       <section className="bg-slate-100/60 border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-xs">
-            <div className="p-2.5 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20">
+            <div className="p-2.5 rounded-lg bg-red-500/10 text-rose-700 border border-red-500/20">
               <ShieldAlert className="w-5 h-5" />
             </div>
             <div>
@@ -215,21 +215,21 @@ export default function App() {
           </div>
 
           <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-xs">
-            <div className="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+            <div className="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-700 border border-indigo-500/20">
               <Cpu className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl font-bold text-indigo-400">{stats.avgR2}</div>
+              <div className="text-xl font-bold text-indigo-700">{stats.avgR2}</div>
               <div className="text-xs text-slate-500">Mean Local GWR R²</div>
             </div>
           </div>
 
           <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-xs">
-            <div className="p-2.5 rounded-lg bg-teal-500/10 text-teal-400 border border-teal-500/20">
+            <div className="p-2.5 rounded-lg bg-teal-500/10 text-teal-700 border border-teal-500/20">
               <TrendingUp className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl font-bold text-teal-400">{stats.moranI}</div>
+              <div className="text-xl font-bold text-teal-700">{stats.moranI}</div>
               <div className="text-xs text-slate-500">Global Moran's I (p &lt; 0.001)</div>
             </div>
           </div>
@@ -316,17 +316,17 @@ export default function App() {
                 {/* East Java Coastline silhouette hint */}
                 <path
                   d="M 12 76 Q 25 70 38 68 Q 50 67 60 62 Q 78 64 92 62 Q 95 45 88 38 Q 74 38 68 34 Q 60 26 46 22 Q 30 30 18 36 Q 14 55 12 76 Z"
-                  fill="#f1f5f9"
-                  stroke="#cbd5e1"
-                  strokeWidth="0.5"
+                  fill="#e2e8f0"
+                  stroke="#94a3b8"
+                  strokeWidth="0.8"
                   strokeDasharray="1,1"
                 />
                 {/* Madura island silhouette */}
                 <path
                   d="M 68 25 Q 75 22 93 23 Q 95 28 85 30 Q 72 29 68 25 Z"
-                  fill="#f1f5f9"
-                  stroke="#cbd5e1"
-                  strokeWidth="0.5"
+                  fill="#e2e8f0"
+                  stroke="#94a3b8"
+                  strokeWidth="0.8"
                 />
 
                 {/* Nodes representing each Regency */}
@@ -367,7 +367,7 @@ export default function App() {
                           x={r.x}
                           y={r.y - 2.8}
                           textAnchor="middle"
-                          fill={isSelected ? '#0f766e' : '#475569'}
+                          fill={isSelected ? '#0f766e' : '#1e293b'}
                           fontSize="2"
                           fontWeight={isSelected ? 'bold' : 'normal'}
                           className="pointer-events-none select-none drop-shadow"
@@ -501,10 +501,10 @@ export default function App() {
                         <td className="py-2 px-3 text-slate-500">{r.bakorwil}</td>
                         <td className="py-2 px-3 font-mono">{r.casesDBD} /100k</td>
                         <td className="py-2 px-3 font-mono">{r.rainfall} mm</td>
-                        <td className="py-2 px-3 font-mono text-indigo-400">{r.localR2}</td>
+                        <td className="py-2 px-3 font-mono text-indigo-700">{r.localR2}</td>
                         <td className="py-2 px-3">
                           <span className={`px-2 py-0.5 rounded text-[10px] font-mono ${
-                            r.moranCluster === 'High-High' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
+                            r.moranCluster === 'High-High' ? 'bg-red-500/20 text-rose-700 border border-red-500/30' :
                             r.moranCluster === 'Low-Low' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
                             'bg-slate-100 text-slate-500'
                           }`}>
@@ -515,7 +515,7 @@ export default function App() {
                           <span
                             className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
                               r.status === 'Bahaya'
-                                ? 'bg-red-500/20 text-red-400 border border-red-500/40'
+                                ? 'bg-red-500/20 text-rose-700 border border-red-500/40'
                                 : r.status === 'Siaga'
                                 ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40'
                                 : r.status === 'Waspada'
@@ -550,7 +550,7 @@ export default function App() {
               <span
                 className={`px-2.5 py-1 rounded-full text-xs font-bold ${
                   selectedRegency.status === 'Bahaya'
-                    ? 'bg-red-500/20 text-red-400 border border-red-500/40'
+                    ? 'bg-red-500/20 text-rose-700 border border-red-500/40'
                     : selectedRegency.status === 'Siaga'
                     ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40'
                     : selectedRegency.status === 'Waspada'
@@ -584,10 +584,10 @@ export default function App() {
 
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
-                  <Activity className="w-3.5 h-3.5 text-red-400" />
+                  <Activity className="w-3.5 h-3.5 text-rose-700" />
                   <span>Insidensi DBD</span>
                 </div>
-                <div className="text-base font-mono font-bold text-red-400">{selectedRegency.casesDBD}</div>
+                <div className="text-base font-mono font-bold text-rose-700">{selectedRegency.casesDBD}</div>
                 <div className="text-[10px] text-slate-500">per 100.000 jiwa</div>
               </div>
 
@@ -606,18 +606,18 @@ export default function App() {
             {/* Local GWR Model Parameters */}
             <div className="space-y-3 pt-2">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                <Cpu className="w-3.5 h-3.5 text-indigo-400" />
+                <Cpu className="w-3.5 h-3.5 text-indigo-700" />
                 <span>Parameter Model GWR Lokal</span>
               </h4>
 
-              <div className="p-3 rounded-xl bg-indigo-950/20 border border-indigo-900/40 space-y-2 text-xs">
+              <div className="p-3 rounded-xl bg-indigo-50/70 border border-indigo-200 space-y-2 text-xs">
                 <div className="flex justify-between">
                   <span className="text-slate-500">Koefisien Hujan (\beta_1):</span>
-                  <span className="font-mono font-bold text-indigo-300">+{selectedRegency.betaRain}</span>
+                  <span className="font-mono font-bold text-indigo-800 font-bold">+{selectedRegency.betaRain}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-500">Koefisien Populasi (\beta_2):</span>
-                  <span className="font-mono font-bold text-indigo-300">+{selectedRegency.betaPop}</span>
+                  <span className="font-mono font-bold text-indigo-800 font-bold">+{selectedRegency.betaPop}</span>
                 </div>
                 <div className="flex justify-between border-t border-indigo-900/30 pt-1.5">
                   <span className="text-slate-700 font-semibold">Local Goodness of Fit (R²):</span>
@@ -698,7 +698,7 @@ export default function App() {
             {/* Academic Reference */}
             <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-600 space-y-1">
               <div className="text-slate-700 font-semibold flex items-center gap-1">
-                <HelpCircle className="w-3 h-3 text-teal-400" />
+                <HelpCircle className="w-3 h-3 text-teal-700" />
                 <span>Formulasi Matematis GWR:</span>
               </div>
               <p className="font-mono text-teal-700 font-semibold text-[10px]">
