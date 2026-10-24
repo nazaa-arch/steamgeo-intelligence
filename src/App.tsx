@@ -175,7 +175,7 @@ export default function App() {
               href="https://steamcraft.online"
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-slate-500 hover:text-slate-200 flex items-center gap-1 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800 border border-slate-800"
+              className="text-xs text-slate-500 hover:text-slate-800 flex items-center gap-1 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-100 border border-slate-200"
             >
               <span>Ecosystem Hub</span>
               <ExternalLink className="w-3 h-3" />
@@ -283,7 +283,7 @@ export default function App() {
 
             {/* Filter by Bakorwil */}
             <div className="flex items-center gap-2">
-              <Filter className="w-3.5 h-3.5 text-slate-400" />
+              <Filter className="w-3.5 h-3.5 text-slate-500" />
               <select
                 value={selectedBakorwil}
                 onChange={(e) => setSelectedBakorwil(e.target.value)}
@@ -498,7 +498,7 @@ export default function App() {
                           <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0" />
                           <span>{r.name}</span>
                         </td>
-                        <td className="py-2 px-3 text-slate-400">{r.bakorwil}</td>
+                        <td className="py-2 px-3 text-slate-500">{r.bakorwil}</td>
                         <td className="py-2 px-3 font-mono">{r.casesDBD} /100k</td>
                         <td className="py-2 px-3 font-mono">{r.rainfall} mm</td>
                         <td className="py-2 px-3 font-mono text-indigo-400">{r.localR2}</td>
@@ -506,7 +506,7 @@ export default function App() {
                           <span className={`px-2 py-0.5 rounded text-[10px] font-mono ${
                             r.moranCluster === 'High-High' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
                             r.moranCluster === 'Low-Low' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-                            'bg-slate-800 text-slate-400'
+                            'bg-slate-100 text-slate-500'
                           }`}>
                             {r.moranCluster}
                           </span>
@@ -564,25 +564,25 @@ export default function App() {
 
             {/* Environmental & Climate Telemetry */}
             <div className="grid grid-cols-2 gap-3 my-4">
-              <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
                   <Droplets className="w-3.5 h-3.5 text-sky-400" />
                   <span>Curah Hujan</span>
                 </div>
-                <div className="text-base font-mono font-bold text-slate-200">{selectedRegency.rainfall} mm</div>
+                <div className="text-base font-mono font-bold text-slate-800">{selectedRegency.rainfall} mm</div>
                 <div className="text-[10px] text-slate-500">Normal: 150-250 mm</div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
                   <Thermometer className="w-3.5 h-3.5 text-amber-400" />
                   <span>Suhu Udara</span>
                 </div>
-                <div className="text-base font-mono font-bold text-slate-200">{selectedRegency.temp} °C</div>
+                <div className="text-base font-mono font-bold text-slate-800">{selectedRegency.temp} °C</div>
                 <div className="text-[10px] text-slate-500">RH: {selectedRegency.humidity}%</div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
                   <Activity className="w-3.5 h-3.5 text-red-400" />
                   <span>Insidensi DBD</span>
@@ -591,12 +591,12 @@ export default function App() {
                 <div className="text-[10px] text-slate-500">per 100.000 jiwa</div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
                 <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
                   <Wind className="w-3.5 h-3.5 text-teal-600" />
                   <span>Populasi</span>
                 </div>
-                <div className="text-base font-mono font-bold text-slate-200">
+                <div className="text-base font-mono font-bold text-slate-800">
                   {(selectedRegency.population / 1000000).toFixed(2)} Juta
                 </div>
                 <div className="text-[10px] text-slate-500">Kepadatan Tinggi</div>
@@ -605,18 +605,18 @@ export default function App() {
 
             {/* Local GWR Model Parameters */}
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                 <Cpu className="w-3.5 h-3.5 text-indigo-400" />
                 <span>Parameter Model GWR Lokal</span>
               </h4>
 
               <div className="p-3 rounded-xl bg-indigo-950/20 border border-indigo-900/40 space-y-2 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-slate-400">Koefisien Hujan (\beta_1):</span>
+                  <span className="text-slate-500">Koefisien Hujan (\beta_1):</span>
                   <span className="font-mono font-bold text-indigo-300">+{selectedRegency.betaRain}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-400">Koefisien Populasi (\beta_2):</span>
+                  <span className="text-slate-500">Koefisien Populasi (\beta_2):</span>
                   <span className="font-mono font-bold text-indigo-300">+{selectedRegency.betaPop}</span>
                 </div>
                 <div className="flex justify-between border-t border-indigo-900/30 pt-1.5">
@@ -627,7 +627,7 @@ export default function App() {
             </div>
 
             {/* Early Warning Recommendation */}
-            <div className="mt-4 p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div className="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-200">
               <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 mb-1">
                 <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
                 <span>Rekomendasi Respons Dini:</span>
@@ -641,7 +641,7 @@ export default function App() {
           </div>
 
           {/* GWR Tuning Hyperparameters */}
-          <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4">
+          <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-4">
             <div className="flex items-center gap-2">
               <BarChart3 className="w-4 h-4 text-teal-600" />
               <h3 className="text-sm font-bold text-slate-900">GWR Spatial Hyperparameters</h3>
@@ -650,7 +650,7 @@ export default function App() {
             {/* Bandwidth Slider */}
             <div>
               <div className="flex justify-between text-xs mb-1.5">
-                <span className="text-slate-400">Kernel Bandwidth (b):</span>
+                <span className="text-slate-500">Kernel Bandwidth (b):</span>
                 <span className="font-mono font-bold text-teal-600">{bandwidth} km</span>
               </div>
               <input
@@ -677,7 +677,7 @@ export default function App() {
                   className={`px-3 py-2 text-xs rounded-xl border text-center transition-all cursor-pointer ${
                     kernelType === 'bisquare'
                       ? 'bg-teal-600 border-teal-600 text-white font-bold'
-                      : 'bg-slate-950 border-slate-800 text-slate-600 hover:text-slate-900'
+                      : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   Adaptive Bi-Square
@@ -687,7 +687,7 @@ export default function App() {
                   className={`px-3 py-2 text-xs rounded-xl border text-center transition-all cursor-pointer ${
                     kernelType === 'gaussian'
                       ? 'bg-teal-600 border-teal-600 text-white font-bold'
-                      : 'bg-slate-950 border-slate-800 text-slate-600 hover:text-slate-900'
+                      : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   Fixed Gaussian
@@ -713,7 +713,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto border-t border-slate-800/80 bg-slate-900/50 py-4 px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
+      <footer className="mt-auto border-t border-slate-200/80 bg-white py-4 px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span>© 2026 SteamGeo Intelligence</span>
@@ -722,13 +722,13 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-slate-400">
+            <span className="text-slate-500">
               Lead Architect:{' '}
               <a
                 href="https://portofolionaza.steamcraft.online"
                 target="_blank"
                 rel="noreferrer"
-                className="text-slate-200 font-semibold hover:text-teal-600 transition-colors"
+                className="text-slate-800 font-semibold hover:text-teal-600 transition-colors"
               >
                 Muhammad Naza Firmansyah
               </a>
