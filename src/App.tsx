@@ -149,9 +149,9 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white">
+    <div className="min-h-screen bg-[#f3f6fb] text-[#111d2d] flex flex-col font-sans selection:bg-teal-600 selection:text-white">
       {/* Top Navigation */}
-      <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+      <header className="border-b border-slate-200/80 bg-white/90 backdrop-blur sticky top-0 z-50 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-gradient-to-tr from-emerald-600 to-teal-400 rounded-xl shadow-lg shadow-emerald-500/20">
@@ -159,14 +159,14 @@ export default function App() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-black text-lg tracking-tight bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">
+                <span className="font-black text-lg tracking-tight bg-gradient-to-r from-teal-600 to-emerald-500 bg-clip-text text-transparent">
                   SteamGeo Intelligence
                 </span>
-                <span className="px-2 py-0.5 text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full">
+                <span className="px-2 py-0.5 text-[10px] font-semibold bg-teal-50 text-teal-700 border border-teal-200 font-semibold rounded-full">
                   v1.2 GWR-GIS
                 </span>
               </div>
-              <p className="text-xs text-slate-400">Spatial Data Science & Climate Early-Warning GIS Jawa Timur</p>
+              <p className="text-xs text-slate-500">Spatial Data Science & Climate Early-Warning GIS Jawa Timur</p>
             </div>
           </div>
 
@@ -175,14 +175,14 @@ export default function App() {
               href="https://steamcraft.online"
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-slate-400 hover:text-slate-200 flex items-center gap-1 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800 border border-slate-800"
+              className="text-xs text-slate-500 hover:text-slate-200 flex items-center gap-1 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800 border border-slate-800"
             >
               <span>Ecosystem Hub</span>
               <ExternalLink className="w-3 h-3" />
             </a>
             <button
               onClick={exportCSV}
-              className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-600/30 transition-all cursor-pointer"
+              className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white shadow-xs font-semibold transition-all cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Export Dataset</span>
@@ -192,45 +192,45 @@ export default function App() {
       </header>
 
       {/* Hero Stats */}
-      <section className="bg-slate-900/40 border-b border-slate-800/80 py-4 px-4 sm:px-6 lg:px-8">
+      <section className="bg-slate-100/60 border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-xs">
             <div className="p-2.5 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20">
               <ShieldAlert className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl font-bold text-slate-100">{stats.highRiskCount} Daerah</div>
-              <div className="text-xs text-slate-400">Status Siaga & Bahaya</div>
+              <div className="text-xl font-bold text-slate-900">{stats.highRiskCount} Daerah</div>
+              <div className="text-xs text-slate-500">Status Siaga & Bahaya</div>
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-xs">
+            <div className="p-2.5 rounded-lg bg-emerald-500/10 text-teal-600 border border-emerald-500/20">
               <Activity className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl font-bold text-slate-100">{stats.avgCases}</div>
-              <div className="text-xs text-slate-400">Rerata Insidensi /100k</div>
+              <div className="text-xl font-bold text-slate-900">{stats.avgCases}</div>
+              <div className="text-xs text-slate-500">Rerata Insidensi /100k</div>
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-xs">
             <div className="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
               <Cpu className="w-5 h-5" />
             </div>
             <div>
               <div className="text-xl font-bold text-indigo-400">{stats.avgR2}</div>
-              <div className="text-xs text-slate-400">Mean Local GWR R²</div>
+              <div className="text-xs text-slate-500">Mean Local GWR R²</div>
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <div className="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-xs">
             <div className="p-2.5 rounded-lg bg-teal-500/10 text-teal-400 border border-teal-500/20">
               <TrendingUp className="w-5 h-5" />
             </div>
             <div>
               <div className="text-xl font-bold text-teal-400">{stats.moranI}</div>
-              <div className="text-xs text-slate-400">Global Moran's I (p &lt; 0.001)</div>
+              <div className="text-xs text-slate-500">Global Moran's I (p &lt; 0.001)</div>
             </div>
           </div>
         </div>
@@ -241,15 +241,15 @@ export default function App() {
         {/* Left Column: Spatial Map & Choropleth Controls */}
         <section className="lg:col-span-8 flex flex-col gap-5">
           {/* Controls Bar */}
-          <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-wrap items-center justify-between gap-4">
+          <div className="p-4 rounded-2xl bg-white border border-slate-200/80 flex flex-wrap items-center justify-between gap-4 shadow-xs">
             <div className="flex items-center gap-2">
-              <Layers className="w-4 h-4 text-emerald-400" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">Layer Choropleth:</span>
-              <div className="flex bg-slate-950 p-1 rounded-xl border border-slate-800">
+              <Layers className="w-4 h-4 text-teal-600" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-700">Layer Choropleth:</span>
+              <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
                 <button
                   onClick={() => setActiveLayer('cases')}
                   className={`px-3 py-1 text-xs rounded-lg font-medium transition-all cursor-pointer ${
-                    activeLayer === 'cases' ? 'bg-emerald-600 text-white shadow' : 'text-slate-400 hover:text-slate-200'
+                    activeLayer === 'cases' ? 'bg-teal-600 text-white shadow-xs font-semibold' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   Insidensi DBD
@@ -257,7 +257,7 @@ export default function App() {
                 <button
                   onClick={() => setActiveLayer('localR2')}
                   className={`px-3 py-1 text-xs rounded-lg font-medium transition-all cursor-pointer ${
-                    activeLayer === 'localR2' ? 'bg-emerald-600 text-white shadow' : 'text-slate-400 hover:text-slate-200'
+                    activeLayer === 'localR2' ? 'bg-teal-600 text-white shadow-xs font-semibold' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   Local R²
@@ -265,7 +265,7 @@ export default function App() {
                 <button
                   onClick={() => setActiveLayer('moran')}
                   className={`px-3 py-1 text-xs rounded-lg font-medium transition-all cursor-pointer ${
-                    activeLayer === 'moran' ? 'bg-emerald-600 text-white shadow' : 'text-slate-400 hover:text-slate-200'
+                    activeLayer === 'moran' ? 'bg-teal-600 text-white shadow-xs font-semibold' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   LISA Clusters
@@ -273,7 +273,7 @@ export default function App() {
                 <button
                   onClick={() => setActiveLayer('rainfall')}
                   className={`px-3 py-1 text-xs rounded-lg font-medium transition-all cursor-pointer ${
-                    activeLayer === 'rainfall' ? 'bg-emerald-600 text-white shadow' : 'text-slate-400 hover:text-slate-200'
+                    activeLayer === 'rainfall' ? 'bg-teal-600 text-white shadow-xs font-semibold' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   Curah Hujan
@@ -287,7 +287,7 @@ export default function App() {
               <select
                 value={selectedBakorwil}
                 onChange={(e) => setSelectedBakorwil(e.target.value)}
-                className="bg-slate-950 border border-slate-800 text-xs rounded-xl px-2.5 py-1.5 text-slate-200 focus:outline-none focus:border-emerald-500"
+                className="bg-slate-50 border border-slate-200 text-xs rounded-xl px-2.5 py-1.5 text-slate-800 focus:outline-none focus:border-teal-500"
               >
                 <option value="All">Semua Wilayah (38 Kab/Kota)</option>
                 <option value="Bojonegoro">Bakorwil Bojonegoro (Surabaya, Gresik, Sidoarjo, dkk)</option>
@@ -300,13 +300,13 @@ export default function App() {
           </div>
 
           {/* Interactive Spatial Grid / SVG Map */}
-          <div className="relative rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 flex flex-col items-center justify-center min-h-[440px] overflow-hidden shadow-inner">
+          <div className="relative rounded-2xl bg-white border border-slate-200/80 p-6 flex flex-col items-center justify-center min-h-[440px] overflow-hidden shadow-xs">
             {/* Background Grid Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:2.5rem_2.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-25"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:2.5rem_2.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-50"></div>
 
             {/* Compass rose watermark */}
-            <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[11px] font-mono text-slate-500 bg-slate-950/70 border border-slate-800 px-2 py-1 rounded-md backdrop-blur">
-              <Compass className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+            <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[11px] font-mono text-slate-500 bg-white/90 border border-slate-200 px-2 py-1 rounded-md backdrop-blur text-slate-600 shadow-xs">
+              <Compass className="w-3.5 h-3.5 text-teal-600 animate-pulse" />
               <span>UTM Zone 49S • WGS84</span>
             </div>
 
@@ -316,16 +316,16 @@ export default function App() {
                 {/* East Java Coastline silhouette hint */}
                 <path
                   d="M 12 76 Q 25 70 38 68 Q 50 67 60 62 Q 78 64 92 62 Q 95 45 88 38 Q 74 38 68 34 Q 60 26 46 22 Q 30 30 18 36 Q 14 55 12 76 Z"
-                  fill="rgba(15, 23, 42, 0.7)"
-                  stroke="#334155"
+                  fill="#f1f5f9"
+                  stroke="#cbd5e1"
                   strokeWidth="0.5"
                   strokeDasharray="1,1"
                 />
                 {/* Madura island silhouette */}
                 <path
                   d="M 68 25 Q 75 22 93 23 Q 95 28 85 30 Q 72 29 68 25 Z"
-                  fill="rgba(15, 23, 42, 0.6)"
-                  stroke="#334155"
+                  fill="#f1f5f9"
+                  stroke="#cbd5e1"
                   strokeWidth="0.5"
                 />
 
@@ -358,7 +358,7 @@ export default function App() {
                         cy={r.y}
                         r={isSelected ? '2.8' : '1.8'}
                         fill={nodeColor}
-                        stroke={isSelected ? '#ffffff' : '#0f172a'}
+                        stroke={isSelected ? '#0f172a' : '#ffffff'}
                         strokeWidth={isSelected ? '0.6' : '0.4'}
                       />
                       {/* Label for notable regencies or selected */}
@@ -367,7 +367,7 @@ export default function App() {
                           x={r.x}
                           y={r.y - 2.8}
                           textAnchor="middle"
-                          fill={isSelected ? '#34d399' : '#94a3b8'}
+                          fill={isSelected ? '#0f766e' : '#475569'}
                           fontSize="2"
                           fontWeight={isSelected ? 'bold' : 'normal'}
                           className="pointer-events-none select-none drop-shadow"
@@ -382,8 +382,8 @@ export default function App() {
             </div>
 
             {/* Map Legend */}
-            <div className="w-full flex items-center justify-between text-xs text-slate-400 bg-slate-950/70 border border-slate-800/80 px-4 py-2 rounded-xl backdrop-blur">
-              <span className="font-semibold text-slate-300">
+            <div className="w-full flex items-center justify-between text-xs text-slate-500 bg-slate-50/90 border border-slate-200 px-4 py-2 rounded-xl backdrop-blur text-slate-600">
+              <span className="font-semibold text-slate-700">
                 Layer:{' '}
                 {activeLayer === 'cases' && 'Tingkat Kejadian DBD (per 100k)'}
                 {activeLayer === 'localR2' && 'GWR Local R-Squared (Fit Model)'}
@@ -452,11 +452,11 @@ export default function App() {
           </div>
 
           {/* Table / List of Regencies */}
-          <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <Database className="w-4 h-4 text-emerald-400" />
-                <h3 className="text-sm font-bold text-slate-200">Daftar Data Wilayah ({filteredRegencies.length})</h3>
+                <Database className="w-4 h-4 text-teal-600" />
+                <h3 className="text-sm font-bold text-slate-900">Daftar Data Wilayah ({filteredRegencies.length})</h3>
               </div>
               <div className="relative">
                 <Search className="w-3.5 h-3.5 absolute left-2.5 top-2.5 text-slate-500" />
@@ -465,7 +465,7 @@ export default function App() {
                   placeholder="Cari Kab/Kota..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-slate-950 border border-slate-800 text-xs rounded-xl pl-8 pr-3 py-1.5 text-slate-200 focus:outline-none focus:border-emerald-500 w-44"
+                  className="bg-slate-50 border border-slate-200 text-xs rounded-xl pl-8 pr-3 py-1.5 text-slate-800 focus:outline-none focus:border-teal-500 w-44"
                 />
               </div>
             </div>
@@ -473,7 +473,7 @@ export default function App() {
             <div className="overflow-x-auto max-h-56">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="border-b border-slate-800 text-slate-400 bg-slate-950/40">
+                  <tr className="border-b border-slate-200 text-slate-600 bg-slate-50 font-semibold">
                     <th className="py-2 px-3">Wilayah</th>
                     <th className="py-2 px-3">Bakorwil</th>
                     <th className="py-2 px-3">Kasus DBD</th>
@@ -483,19 +483,19 @@ export default function App() {
                     <th className="py-2 px-3">Status</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800/60">
+                <tbody className="divide-y divide-slate-100">
                   {filteredRegencies.map((r) => {
                     const isSelected = selectedRegency.id === r.id
                     return (
                       <tr
                         key={r.id}
                         onClick={() => setSelectedRegency(r)}
-                        className={`hover:bg-slate-800/40 cursor-pointer transition-colors ${
-                          isSelected ? 'bg-emerald-950/40 text-emerald-300 font-semibold' : 'text-slate-300'
+                        className={`hover:bg-slate-50 cursor-pointer transition-colors ${
+                          isSelected ? 'bg-teal-50 text-teal-800 font-semibold' : 'text-slate-700'
                         }`}
                       >
                         <td className="py-2 px-3 flex items-center gap-1.5">
-                          <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0" />
                           <span>{r.name}</span>
                         </td>
                         <td className="py-2 px-3 text-slate-400">{r.bakorwil}</td>
@@ -520,7 +520,7 @@ export default function App() {
                                 ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40'
                                 : r.status === 'Waspada'
                                 ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/40'
-                                : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
+                                : 'bg-emerald-500/20 text-teal-600 border border-emerald-500/40'
                             }`}
                           >
                             {r.status}
@@ -538,13 +538,13 @@ export default function App() {
         {/* Right Column: Selected Regency Detail & GWR Tuner */}
         <section className="lg:col-span-4 flex flex-col gap-5">
           {/* Regency Detail Card */}
-          <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-emerald-400" />
+                <MapPin className="w-5 h-5 text-teal-600" />
                 <div>
-                  <h2 className="text-base font-bold text-slate-100">{selectedRegency.name}</h2>
-                  <p className="text-xs text-slate-400">Kode Wilayah BPS: {selectedRegency.id} • {selectedRegency.bakorwil}</p>
+                  <h2 className="text-base font-bold text-slate-900">{selectedRegency.name}</h2>
+                  <p className="text-xs text-slate-500">Kode Wilayah BPS: {selectedRegency.id} • {selectedRegency.bakorwil}</p>
                 </div>
               </div>
               <span
@@ -555,7 +555,7 @@ export default function App() {
                     ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40'
                     : selectedRegency.status === 'Waspada'
                     ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/40'
-                    : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
+                    : 'bg-emerald-500/20 text-teal-600 border border-emerald-500/40'
                 }`}
               >
                 {selectedRegency.status}
@@ -565,7 +565,7 @@ export default function App() {
             {/* Environmental & Climate Telemetry */}
             <div className="grid grid-cols-2 gap-3 my-4">
               <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
-                <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-1">
+                <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
                   <Droplets className="w-3.5 h-3.5 text-sky-400" />
                   <span>Curah Hujan</span>
                 </div>
@@ -574,7 +574,7 @@ export default function App() {
               </div>
 
               <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
-                <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-1">
+                <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
                   <Thermometer className="w-3.5 h-3.5 text-amber-400" />
                   <span>Suhu Udara</span>
                 </div>
@@ -583,7 +583,7 @@ export default function App() {
               </div>
 
               <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
-                <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-1">
+                <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
                   <Activity className="w-3.5 h-3.5 text-red-400" />
                   <span>Insidensi DBD</span>
                 </div>
@@ -592,8 +592,8 @@ export default function App() {
               </div>
 
               <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
-                <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-1">
-                  <Wind className="w-3.5 h-3.5 text-emerald-400" />
+                <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
+                  <Wind className="w-3.5 h-3.5 text-teal-600" />
                   <span>Populasi</span>
                 </div>
                 <div className="text-base font-mono font-bold text-slate-200">
@@ -620,19 +620,19 @@ export default function App() {
                   <span className="font-mono font-bold text-indigo-300">+{selectedRegency.betaPop}</span>
                 </div>
                 <div className="flex justify-between border-t border-indigo-900/30 pt-1.5">
-                  <span className="text-slate-300 font-semibold">Local Goodness of Fit (R²):</span>
-                  <span className="font-mono font-bold text-emerald-400">{(selectedRegency.localR2 * 100).toFixed(1)}%</span>
+                  <span className="text-slate-700 font-semibold">Local Goodness of Fit (R²):</span>
+                  <span className="font-mono font-bold text-teal-600">{(selectedRegency.localR2 * 100).toFixed(1)}%</span>
                 </div>
               </div>
             </div>
 
             {/* Early Warning Recommendation */}
             <div className="mt-4 p-3 rounded-xl bg-slate-950 border border-slate-800">
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-300 mb-1">
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 mb-1">
                 <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
                 <span>Rekomendasi Respons Dini:</span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-500 leading-relaxed">
                 {selectedRegency.status === 'Bahaya' || selectedRegency.status === 'Siaga'
                   ? 'Intensifkan fogging fokus dan PSN 3M Plus dalam radius 200m dari kluster. Tingkatkan kapasitas uji NS1 antigen di seluruh Puskesmas setempat.'
                   : 'Pertahankan surveillance mingguan ABJ (Angka Bebas Jentik) di atas 95%. Lakukan monitoring curah hujan akumulatif.'}
@@ -643,15 +643,15 @@ export default function App() {
           {/* GWR Tuning Hyperparameters */}
           <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4">
             <div className="flex items-center gap-2">
-              <BarChart3 className="w-4 h-4 text-emerald-400" />
-              <h3 className="text-sm font-bold text-slate-200">GWR Spatial Hyperparameters</h3>
+              <BarChart3 className="w-4 h-4 text-teal-600" />
+              <h3 className="text-sm font-bold text-slate-900">GWR Spatial Hyperparameters</h3>
             </div>
 
             {/* Bandwidth Slider */}
             <div>
               <div className="flex justify-between text-xs mb-1.5">
                 <span className="text-slate-400">Kernel Bandwidth (b):</span>
-                <span className="font-mono font-bold text-emerald-400">{bandwidth} km</span>
+                <span className="font-mono font-bold text-teal-600">{bandwidth} km</span>
               </div>
               <input
                 type="range"
@@ -659,7 +659,7 @@ export default function App() {
                 max="80"
                 value={bandwidth}
                 onChange={(e) => setBandwidth(Number(e.target.value))}
-                className="w-full accent-emerald-500 bg-slate-950 cursor-pointer"
+                className="w-full accent-emerald-500 bg-slate-200 cursor-pointer"
               />
               <div className="flex justify-between text-[10px] text-slate-500 mt-1">
                 <span>15 km (Local)</span>
@@ -670,14 +670,14 @@ export default function App() {
 
             {/* Kernel Function Selection */}
             <div>
-              <label className="text-xs text-slate-400 block mb-1.5">Fungsi Kernel Spatial:</label>
+              <label className="text-xs text-slate-500 block mb-1.5">Fungsi Kernel Spatial:</label>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   onClick={() => setKernelType('bisquare')}
                   className={`px-3 py-2 text-xs rounded-xl border text-center transition-all cursor-pointer ${
                     kernelType === 'bisquare'
-                      ? 'bg-emerald-600/20 border-emerald-500 text-emerald-300 font-bold'
-                      : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200'
+                      ? 'bg-teal-600 border-teal-600 text-white font-bold'
+                      : 'bg-slate-950 border-slate-800 text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   Adaptive Bi-Square
@@ -686,8 +686,8 @@ export default function App() {
                   onClick={() => setKernelType('gaussian')}
                   className={`px-3 py-2 text-xs rounded-xl border text-center transition-all cursor-pointer ${
                     kernelType === 'gaussian'
-                      ? 'bg-emerald-600/20 border-emerald-500 text-emerald-300 font-bold'
-                      : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200'
+                      ? 'bg-teal-600 border-teal-600 text-white font-bold'
+                      : 'bg-slate-950 border-slate-800 text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   Fixed Gaussian
@@ -696,12 +696,12 @@ export default function App() {
             </div>
 
             {/* Academic Reference */}
-            <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 space-y-1">
-              <div className="text-slate-300 font-semibold flex items-center gap-1">
+            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-600 space-y-1">
+              <div className="text-slate-700 font-semibold flex items-center gap-1">
                 <HelpCircle className="w-3 h-3 text-teal-400" />
                 <span>Formulasi Matematis GWR:</span>
               </div>
-              <p className="font-mono text-emerald-400/90 text-[10px]">
+              <p className="font-mono text-teal-700 font-semibold text-[10px]">
                 y_i = \beta_0(u_i, v_i) + \sum \beta_k(u_i, v_i) x_ik + \epsilon_i
               </p>
               <p className="text-slate-500 text-[10px]">
@@ -713,12 +713,12 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto border-t border-slate-800/80 bg-slate-900/50 py-4 px-4 sm:px-6 lg:px-8 text-xs text-slate-400">
+      <footer className="mt-auto border-t border-slate-800/80 bg-slate-900/50 py-4 px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span>© 2026 SteamGeo Intelligence</span>
             <span>•</span>
-            <span>Ecosystem of <a href="https://steamcraft.online" className="text-emerald-400 hover:underline">STEAM-Craft</a></span>
+            <span>Ecosystem of <a href="https://steamcraft.online" className="text-teal-600 hover:underline">STEAM-Craft</a></span>
           </div>
 
           <div className="flex items-center gap-4">
@@ -728,7 +728,7 @@ export default function App() {
                 href="https://portofolionaza.steamcraft.online"
                 target="_blank"
                 rel="noreferrer"
-                className="text-slate-200 font-semibold hover:text-emerald-400 transition-colors"
+                className="text-slate-200 font-semibold hover:text-teal-600 transition-colors"
               >
                 Muhammad Naza Firmansyah
               </a>
@@ -737,7 +737,7 @@ export default function App() {
               href="https://github.com/nazaa-arch/steamgeo-intelligence"
               target="_blank"
               rel="noreferrer"
-              className="text-emerald-400 hover:underline flex items-center gap-1"
+              className="text-teal-600 hover:underline flex items-center gap-1"
             >
               <span>GitHub Repository</span>
               <ChevronRight className="w-3 h-3" />
